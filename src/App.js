@@ -11,6 +11,7 @@ function App() {
   let [따봉, 따봉변경] = useState(0);
   let [modal, setModal] = useState(false);
 
+
   return (
     <div className="App">
       <div className='black-nav'>
@@ -29,6 +30,7 @@ function App() {
         글제목변경(copy)
       }}>Sort</button>
 
+      {/* 
       <div className='list'>
         <h4>{ 글제목[0] } <span style={ {cursor: 'pointer'} } onClick={ () => { 따봉변경(따봉 + 1) } }>👏</span> { 따봉 } </h4>
         <p>6월 20일 발행</p>
@@ -40,14 +42,25 @@ function App() {
       </div>
 
       <div className='list'>
-        <h4 onClick={ () => { setModal(true) } }>{ 글제목[2] }</h4>
+        <h4 onClick={ () => { setModal(!modal) } }>{ 글제목[2] }</h4>
         <p>7월 2일 발행</p>
-      </div>
-
+      </div> 
+      */}
+      
       {
         modal == true ? <Modal/> : null
       }
 
+      {
+        글제목.map(function(a, i) {
+          return (
+            <div className='list' key={i}>
+              <h4>{ 글제목[i] } <span style={ {cursor: 'pointer'} } onClick={ () => { 따봉변경(따봉 + 1) } }>🤣</span> { 따봉 } </h4>
+              <p>6월 21일 발행</p>
+            </div>
+          )
+        })
+      }
     </div>
   );
 }
