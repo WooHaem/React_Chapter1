@@ -25,7 +25,7 @@ function App() {
         let copy = [...글제목]; // ★★★ (1)배열 useState로 변경 시 항상 카피본 만들기
         copy[0] = '여자코트 추천'; // (2)카피된 배열에 변경함수식 넣기
         글제목변경(copy) // (3)변경할 useState에 변경함수식 카피본 적용
-      }}>성별 변경</button>
+      }}>성별 바꾸기</button>
 
       <button className='btn' onClick={() => { 
         let copy = [...글제목]; // ★★★ (1)배열 useState로 변경 시 항상 카피본 만들기
